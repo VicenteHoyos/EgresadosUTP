@@ -83,7 +83,7 @@ def solicitud_registro(request):
 			)
 		
 		asunto2 = 'Invitacion Egresado Observatorio Egresados'
-		link ='http://observatorioegresadosutp.pythonanywhere.com/accounts/register/'
+		link ='http://observatorio.pythonanywhere.com/accounts/register/'
 		email_to2 = [form_email]
 		email_mensaje2 = "Cordial saludo %s: Dando respuesta a su solicitud lo invitamos a formar parte de la plataforma Observatorio de Egresados. Para crear su cuenta ingreser al link %s de lo contrario haga caso omiso a este correo, la habilitacion de su cuenta esta sujeta a criterio de nuestro grupo de administradores. Enviado por %s." %(form_nombre,link,email_from)
 		send_mail(asunto2, 
@@ -112,7 +112,7 @@ def invitacionAdmin(request):
 		form_email = form.cleaned_data.get("email")
 		form_nombre = form.cleaned_data.get("nombre")
 		asunto = 'Invitacion Administrador Observatorio Egresados'
-		link ='http://observatorioegresadosutp.pythonanywhere.com/accounts/register/'
+		link ='http://observatorio.pythonanywhere.com/accounts/register/'
 		email_from = settings.EMAIL_HOST_USER
 		email_to = [form_email]
 		email_mensaje = "Cordial saludo %s: El presente correo es para invitarlo a formar parte del grupo de administradores de Observatorio de Egresados. Para crear su cuenta ingreser al link %s de lo contrario haga caso omiso a este correo. Enviado por %s.  " %(form_nombre,link,email_from)
