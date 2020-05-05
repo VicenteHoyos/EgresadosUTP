@@ -268,6 +268,8 @@ def user_Admin_update_observatorio(request, id=None):
 
 #deshabilitar usuario administrador lista
 def user_list_disable_admin(request):
+	if not request.user.is_superuser :
+		raise Http404
 	queryset = []
 	if request.user.is_superuser:
 		queryset = User.objects.filter(Administrador = True)
@@ -295,6 +297,8 @@ def user_list_disable_admin(request):
 
 #deshabilitar usuario egresado lista
 def user_list_disable_egresado(request):
+	if not request.user.Administrador :
+		raise Http404
 	queryset=[]
 	if request.user.Administrador:
 		queryset = User.objects.filter( Egresado=True)
